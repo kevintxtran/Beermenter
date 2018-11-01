@@ -18,3 +18,11 @@ div.brewery img {
 	max-height:100%;
 	object-fit: contain;
 }
+.brewery-header {
+	background-color: lightgray;
+	text-align: center;
+	padding: 10px;
+	margin: 0;
+}
+div.beer img{
+}
