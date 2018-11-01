@@ -1,0 +1,20 @@
+div.brewery-list {
+	width: 100%;
+	overflow: auto;
+}
+
+div.brewery {
+	box-sizing: border-box;
+	padding: 5px;
+	width: 50%;
+	float: left;
+}
+div.brewery a {
+	width: 100%;
+	height: auto;
+}
+div.brewery img {
+	max-width:100%;
+	max-height:100%;
+	object-fit: contain;
+}
