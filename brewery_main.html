@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/beermenter.css">
+    <link rel="stylesheet" href="css/beerinfo.css">
   </head>
 
   <body class="beer-body">
@@ -14,49 +15,65 @@
         <p class="brewery-header">Ballast Point Brewing Co.</p>
       </header>
 
-        <p class="btype">Rich and Malty <sup><img id="qm" src="img/question.png" alt="Information"></sup></p>
-        <div class="row">
-          <figure>
-            <img class="beer" src="img/ballastpoint/rich-malty/01-sculpin-ipa.png" alt="Name of Beer">
-            <figcaption>Sculpin IPA</figcaption>
-          </figure>
-          <figure>
-            <img class="beer" src="img/ballastpoint/rich-malty/02-manta-ray-ipa.png" alt="Name of Beer">
-            <figcaption>Manta Ray IPA</figcaption>
-          </figure>
-          <figure>
-            <img class="beer" src="img/ballastpoint/rich-malty/03-fathom-ipa.png" alt="Name of Beer">
-            <figcaption>Fathom IPA</figcaption>
-          </figure>
+        <p class="btype">Rich and Malty <sup><img class="qm" id="qm1" src="img/question.png" alt="Information"></sup></p>
+
+        <div class="category">
+          <div class="filterDiv ipa beer fruity hop test">
+            <figure>
+              <img id="beer1" class="beer" src="img/ballastpoint/rich-malty/01-sculpin-ipa.png" alt="Name of Beer">
+              <figcaption>Sculpin IPA</figcaption>
+            </figure>
+          </div>
+          <div class="filterDiv ipa beer crisp hop test">
+            <figure>
+              <img id="beer2" class="beer" src="img/ballastpoint/rich-malty/02-manta-ray-ipa.png" alt="Name of Beer">
+              <figcaption>Manta Ray IPA</figcaption>
+            </figure>
+          </div>
+          <div class="filterDiv ipa beer fruity hop test">
+            <figure>
+              <img id="beer3" class="beer" src="img/ballastpoint/rich-malty/03-fathom-ipa.png" alt="Name of Beer">
+              <figcaption>Fathom IPA</figcaption>
+            </figure>
+          </div>
+          <div class="filterDiv ipa beer fruity hop test">
+            <figure>
+              <img id="beer4" class="beer" src="img/ballastpoint/rich-malty/04-gf-sculpin-ipa.png" alt="Name of Beer">
+              <figcaption>GF Sculpin IPA</figcaption>
+            </figure>
+          </div>
+          <div class="filterDiv ipa beer fruity hop test">
+            <figure>
+              <img id="beer5" class="beer" src="img/ballastpoint/rich-malty/05-melon-dorado.png" alt="Name of Beer">
+              <figcaption>Melon Dorado</figcaption>
+            </figure>
+          </div>
         </div>
-        <div class="row">
-          <figure>
-            <img class="beer" src="img/ballastpoint/rich-malty/04-gf-sculpin-ipa.png" alt="Name of Beer">
-            <figcaption>GF Sculpin IPA</figcaption>
-          </figure>
-          <figure>
-            <img class="beer" src="img/ballastpoint/rich-malty/05-melon-dorado.png" alt="Name of Beer">
-            <figcaption>Melon Dorado</figcaption>
-          </figure>
+
+        <p class="btype">Crisp and Bright <sup><img class="qm" id="qm2" src="img/question.png" alt="Information"></sup></p>
+
+        <div class="category">
+          <div class="filterDiv lager beer hop malt test">
+            <figure>
+              <img id="beer6" class="beer" src="img/ballastpoint/crisp-clear/01-longfin-lager.png" alt="Name of Beer">
+              <figcaption>Longfin Lager</figcaption>
+            </figure>
+          </div>
+          <div class="filterDiv kolsch beer crisp fruity tart test">
+            <figure>
+              <img id="beer7" class="beer" src="img/ballastpoint/crisp-clear/02-ca-kolsch.png" alt="Name of Beer">
+              <figcaption>CA Kölsch</figcaption>
+            </figure>
+          </div>
+          <div class="filterDiv beer crisp malt test">
+            <figure>
+              <img id="beer8" class="beer" src="img/ballastpoint/crisp-clear/03-bb.png" alt="Name of Beer">
+              <figcaption>Bonito Blonde</figcaption>
+            </figure>
+          </div>
         </div>
-        <p class="btype">Crisp and Bright <sup><img id="qm" src="img/question.png" alt="Information"></sup></p>
-        <div class="row">
-          <figure>
-            <img class="beer" src="img/ballastpoint/crisp-clear/01-longfin-lager.png" alt="Name of Beer">
-            <figcaption>Longfin Lager</figcaption>
-          </figure>
-          <figure>
-            <img class="beer" src="img/ballastpoint/crisp-clear/02-ca-kolsch.png" alt="Name of Beer">
-            <figcaption>CA Kölsch</figcaption>
-          </figure>
-          <figure>
-            <img class="beer" src="img/ballastpoint/crisp-clear/03-bb.png" alt="Name of Beer">
-            <figcaption>Bonito Blonde</figcaption>
-          </figure>
-        </div>
-        <p class="btype">Hops & More Hops <sup><img id="qm" src="img/question.png" alt="Information"></sup></p>
-        <div id="templatedBeers">
-        </div>
+
+        <p class="btype">Hops & More Hops <sup><img class="qm" id="qm3" src="img/question.png" alt="Information"></sup></p>
 
       <img id="filter" src="img/filtershadow.png" alt="Filters">
 
@@ -67,30 +84,22 @@
         <div class="modal-content">
           <details>
             <summary>Style &#x2295;</summary>
-            <div class="ck-button">
-              <label>
-                <input type="checkbox" value="1"><span>Kolsch</span>
-              </label>
-            </div>
-            <div class="ck-button">
-              <label>
-                <input type="checkbox" value="1"><span>Lager</span>
-              </label>
-            </div>
-            <div class="ck-button">
-              <label>
-                <input type="checkbox" value="1"><span>India Pale Ale</span>
-              </label>
-            </div>
-            <div class="ck-button">
-              <label>
-                <input type="checkbox" value="1"><span>Saison</span>
-              </label>
-            </div>
-            <div class="ck-button">
-              <label>
-                <input type="checkbox" value="1"><span>Witbier</span>
-              </label>
+            <div id="filterContainer">
+              <div class="ck-button">
+                <label>
+                  <input class="btn" type="checkbox" value="1" onclick="filterSelection('kolsch')"><span>Kolsch</span>
+                </label>
+              </div>
+              <div class="ck-button">
+                <label>
+                  <input class="btn" type="checkbox" value="1" onclick="filterSelection('lager')"><span>Lager</span>
+                </label>
+              </div>
+              <div class="ck-button">
+                <label>
+                  <input class="btn" type="checkbox" value="1" onclick="filterSelection('ipa')"><span>India Pale Ale</span>
+                </label>
+              </div>
             </div>
           </details>
           <details>
@@ -104,43 +113,348 @@
 
       </div>
 
-      <div id="infoModal" class="beer-info-modal">
-
+      <div id="infoModal1" class="beer-info-modal">
+        <div class="beer-modal-content">
+          <span class="close">&times;</span>
+          <img class="beerinfo" src="img/ballastpoint/rich-malty/01-sculpin-ipa.png" alt="Name of Beer">
+          <p class="beername">Aloha Sculpin IPA</p>
+          <p class="beertype">Indian Pale Ale</p>
+          <p class="abv">7.0% Alcohol Content</p>
+          <p class="beerdesc">A hazy IPA with noles of guava and pineapple.</p>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Fruity</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Bitter</span>
+            </label>
+          </div>
+        </div>
       </div>
+      <div id="infoModal2" class="beer-info-modal">
+        <div class="beer-modal-content">
+          <span class="close">&times;</span>
+          <img class="beerinfo" src="img/ballastpoint/rich-malty/02-manta-ray-ipa.png" alt="Name of Beer">
+          <p class="beername">Manta Ray IPA</p>
+          <p class="beertype">Indian Pale Ale</p>
+          <p class="abv">8.5% Alcohol Content</p>
+          <p class="beerdesc">Light and dry on palate with big, hoppy flavor</p>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Crisp</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Hop</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="infoModal3" class="beer-info-modal">
+        <div class="beer-modal-content">
+          <span class="close">&times;</span>
+          <img class="beerinfo" src="img/ballastpoint/rich-malty/03-fathom-ipa.png" alt="Name of Beer">
+          <p class="beername">Fathom IPA</p>
+          <p class="beertype">Indian Pale Ale</p>
+          <p class="abv">6.6% Alcohol Content</p>
+          <p class="beerdesc">IPA with hints of citrus and pine</p>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Fruity</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Hop</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="infoModal4" class="beer-info-modal">
+        <div class="beer-modal-content">
+          <span class="close">&times;</span>
+          <img class="beerinfo" src="img/ballastpoint/rich-malty/04-gf-sculpin-ipa.png" alt="Name of Beer">
+          <p class="beername">Grapefruit Sculpin IPA</p>
+          <p class="beertype">Indian Pale Ale</p>
+          <p class="abv">8.5% Alcohol Content</p>
+          <p class="beerdesc">Signature IPA with bright, grapefruit punch</p>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Fruity</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Hop</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="infoModal5" class="beer-info-modal">
+        <div class="beer-modal-content">
+          <span class="close">&times;</span>
+          <img class="beerinfo" src="img/ballastpoint/rich-malty/05-melon-dorado.png" alt="Name of Beer">
+          <p class="beername">Watermelon Dorado</p>
+          <p class="beertype">Indian Pale Ale</p>
+          <p class="abv">8.5% Alcohol Content</p>
+          <p class="beerdesc">Double IPA with refreshing watermelon</p>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Fruity</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Hop</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="infoModal6" class="beer-info-modal">
+        <div class="beer-modal-content">
+          <span class="close">&times;</span>
+          <img class="beerinfo" src="img/ballastpoint/crisp-clear/01-longfin-lager.png" alt="Name of Beer">
+          <p class="beername">Longfin Lager</p>
+          <p class="beertype">Lager</p>
+          <p class="abv">5.2% Alcohol Content</p>
+          <p class="beerdesc">A traditional Helles style lager that is light and refreshing</p>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Crisp</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Malt</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="infoModal7" class="beer-info-modal">
+        <div class="beer-modal-content">
+          <span class="close">&times;</span>
+          <img class="beerinfo" src="img/ballastpoint/crisp-clear/02-ca-kolsch.png" alt="Name of Beer">
+          <p class="beername">California Kolsch</p>
+          <p class="beertype">Kolsch</p>
+          <p class="abv">5.2% Alcohol Content</p>
+          <p class="beerdesc">Kolsch style, light but complex with subdued fruitiness</p>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Crisp</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Fruity</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Tart</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="infoModal8" class="beer-info-modal">
+        <div class="beer-modal-content">
+          <span class="close">&times;</span>
+          <img class="beerinfo" src="img/ballastpoint/crisp-clear/03-bb.png" alt="Name of Beer">
+          <p class="beername">Bonito Blonde</p>
+          <p class="beertype">Blonde Ale</p>
+          <p class="abv">4.5% Alcohol Content</p>
+          <p class="beerdesc">An American blonde ale w/ soft malt notes and slight yeast character</p>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Crisp</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Malt</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div id="qModal1" class="qmodal">
+        <div class="qcontent">
+          <span class="qclose">&times;</span>
+          <p>Characterized by their aroma and bitterness derived from the addition of hops. Hops are flowers that are used in brewing beer, adding a floral bitterness.</p>
+        </div>
+      </div>
+      <div id="qModal2" class="qmodal">
+        <div class="qcontent">
+          <span class="qclose">&times;</span>
+          <p>Fermented low and slow. Lagers are characterized by a much milder hop taste as well as more bready, almost biscuity flavor. </p>
+        </div>
+      </div>
+      <div id="qModal3" class="qmodal">
+        <div class="qcontent">
+          <span class="qclose">&times;</span>
+          <p>A creamy, toasty flavor with little to no hop aroma. These brews employ roasted malts grains and have and rich dark color.</p>
+        </div>
+      </div>
+
+      <script>
+      filterSelection("all")
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+      }
+
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("filterContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+      </script>
 
       <script>
         var modal = document.getElementById("myModal");
         var button = document.getElementById("filter");
-
         var span = document.getElementsByClassName("close")[0];
-
         button.onclick = function() {
           modal.style.display = "block";
         }
-
         span.onclick = function() {
           modal.style.display = "none";
         }
 
-      </script>
+        var qmodal1 = document.getElementById("qModal1");
+        var qbutton1 = document.getElementById("qm1");
+        var qspan1 = document.getElementsByClassName("qclose")[0];
+        qbutton1.onclick = function() {
+          qmodal1.style.display = "block";
+        }
+        qspan1.onclick = function() {
+          qmodal1.style.display = "none";
+        }
+        var qmodal2 = document.getElementById("qModal2");
+        var qbutton2 = document.getElementById("qm2");
+        var qspan2 = document.getElementsByClassName("qclose")[1];
+        qbutton2.onclick = function() {
+          qmodal2.style.display = "block";
+        }
+        qspan2.onclick = function() {
+          qmodal2.style.display = "none";
+        }
+        var qmodal3 = document.getElementById("qModal3");
+        var qbutton3 = document.getElementById("qm3");
+        var qspan3 = document.getElementsByClassName("qclose")[2];
+        qbutton3.onclick = function() {
+          qmodal3.style.display = "block";
+        }
+        qspan3.onclick = function() {
+          qmodal3.style.display = "none";
+        }
 
-      <!--<script id="beertemplate" type="text/x-handlebars-template">
-        <div class="row" id="beer{{index}}">
-          <figure>
-            <img class="beer" src="{{beerimg}}" alt="Beer">
-            <figcaption>{{beername}}</figcaption>
-          </figure>
-        </div>
-      </script>-->
+        var bmodal1 = document.getElementById("infoModal1");
+        var bimage1 = document.getElementById("beer1");
+        var span1 = document.getElementsByClassName("close")[1];
+        bimage1.onclick = function() {
+          bmodal1.style.display = "block";
+        }
+        span1.onclick = function() {
+          bmodal1.style.display = "none";
+        }
 
-      <script id="modalTemplate" type="text/x-handlebars-template">
-        <div id="myModal" class="beerModal">
-
-          <!-- Modal content -->
-          <div class="beer-modal-content">
-          </div>
-
-        </div>
+        var bmodal2 = document.getElementById("infoModal2");
+        var bimage2 = document.getElementById("beer2");
+        var span2 = document.getElementsByClassName("close")[2];
+        bimage2.onclick = function() {
+          bmodal2.style.display = "block";
+        }
+        span2.onclick = function() {
+          bmodal2.style.display = "none";
+        }
+        var bmodal3 = document.getElementById("infoModal3");
+        var bimage3 = document.getElementById("beer3");
+        var span3 = document.getElementsByClassName("close")[3];
+        bimage3.onclick = function() {
+          bmodal3.style.display = "block";
+        }
+        span3.onclick = function() {
+          bmodal3.style.display = "none";
+        }
+        var bmodal4 = document.getElementById("infoModal4");
+        var bimage4 = document.getElementById("beer4");
+        var span4 = document.getElementsByClassName("close")[4];
+        bimage4.onclick = function() {
+          bmodal4.style.display = "block";
+        }
+        span4.onclick = function() {
+          bmodal4.style.display = "none";
+        }
+        var bmodal5 = document.getElementById("infoModal5");
+        var bimage5 = document.getElementById("beer5");
+        var span5 = document.getElementsByClassName("close")[5];
+        bimage5.onclick = function() {
+          bmodal5.style.display = "block";
+        }
+        span5.onclick = function() {
+          bmodal5.style.display = "none";
+        }
+        var bmodal6 = document.getElementById("infoModal6");
+        var bimage6 = document.getElementById("beer6");
+        var span6 = document.getElementsByClassName("close")[6];
+        bimage6.onclick = function() {
+          bmodal6.style.display = "block";
+        }
+        span6.onclick = function() {
+          bmodal6.style.display = "none";
+        }
+        var bmodal7 = document.getElementById("infoModal7");
+        var bimage7 = document.getElementById("beer7");
+        var span7 = document.getElementsByClassName("close")[7];
+        bimage7.onclick = function() {
+          bmodal7.style.display = "block";
+        }
+        span7.onclick = function() {
+          bmodal7.style.display = "none";
+        }
+        var bmodal8 = document.getElementById("infoModal8");
+        var bimage8 = document.getElementById("beer8");
+        var span8 = document.getElementsByClassName("close")[8];
+        bimage8.onclick = function() {
+          bmodal8.style.display = "block";
+        }
+        span8.onclick = function() {
+          bmodal8.style.display = "none";
+        }
       </script>
 
       <script src="https://code.jquery.com/jquery.js"></script>
