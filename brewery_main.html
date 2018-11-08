@@ -2,38 +2,149 @@
 <html lang="en">
   <head>
     <title>Beermenter</title>
-    <!--<base href="https://justinschen.github.io/Beermenter/" />-->
+    <link rel="icon" href="img/favicon.ico">
+    <!--   <base href="https://justinschen.github.io/Beermenter/" /> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/beermenter.css">
-    <!--
-    <link rel="shortcut icon" href="assets/img/icon.png" />
-    -->
   </head>
 
-  <body>
+  <body class="beer-body">
       <header>
-        <h1 class="brewery-header">Ballast Point Brewing Co.</h1>
+        <p class="brewery-header">Ballast Point Brewing Co.</p>
       </header>
 
-      <div class="beer">
-        <h2>Rich and Malty</h2>
-          <img src="img/q.png">
-        <h2>Crisp and Bright</h2>
-          <img src="img/q.png">
-        <h2>Hops & More Hops</h2>
-          <img src="img/q.png">
+        <p class="btype">Rich and Malty <sup><img id="qm" src="img/question.png" alt="Information"></sup></p>
+        <div class="row">
+          <figure>
+            <img class="beer" src="img/ballastpoint/rich-malty/01-sculpin-ipa.png" alt="Name of Beer">
+            <figcaption>Sculpin IPA</figcaption>
+          </figure>
+          <figure>
+            <img class="beer" src="img/ballastpoint/rich-malty/02-manta-ray-ipa.png" alt="Name of Beer">
+            <figcaption>Manta Ray IPA</figcaption>
+          </figure>
+          <figure>
+            <img class="beer" src="img/ballastpoint/rich-malty/03-fathom-ipa.png" alt="Name of Beer">
+            <figcaption>Fathom IPA</figcaption>
+          </figure>
+        </div>
+        <div class="row">
+          <figure>
+            <img class="beer" src="img/ballastpoint/rich-malty/04-gf-sculpin-ipa.png" alt="Name of Beer">
+            <figcaption>GF Sculpin IPA</figcaption>
+          </figure>
+          <figure>
+            <img class="beer" src="img/ballastpoint/rich-malty/05-melon-dorado.png" alt="Name of Beer">
+            <figcaption>Melon Dorado</figcaption>
+          </figure>
+        </div>
+        <p class="btype">Crisp and Bright <sup><img id="qm" src="img/question.png" alt="Information"></sup></p>
+        <div class="row">
+          <figure>
+            <img class="beer" src="img/ballastpoint/crisp-clear/01-longfin-lager.png" alt="Name of Beer">
+            <figcaption>Longfin Lager</figcaption>
+          </figure>
+          <figure>
+            <img class="beer" src="img/ballastpoint/crisp-clear/02-ca-kolsch.png" alt="Name of Beer">
+            <figcaption>CA Kölsch</figcaption>
+          </figure>
+          <figure>
+            <img class="beer" src="img/ballastpoint/crisp-clear/03-bb.png" alt="Name of Beer">
+            <figcaption>Bonito Blonde</figcaption>
+          </figure>
+        </div>
+        <p class="btype">Hops & More Hops <sup><img id="qm" src="img/question.png" alt="Information"></sup></p>
+        <div id="templatedBeers">
+        </div>
+
+      <img id="filter" src="img/filtershadow.png" alt="Filters">
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <details>
+            <summary>Style &#x2295;</summary>
+            <div class="ck-button">
+              <label>
+                <input type="checkbox" value="1"><span>Kolsch</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input type="checkbox" value="1"><span>Lager</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input type="checkbox" value="1"><span>India Pale Ale</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input type="checkbox" value="1"><span>Saison</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input type="checkbox" value="1"><span>Witbier</span>
+              </label>
+            </div>
+          </details>
+          <details>
+            <summary>Characteristic &#x2295;</summary>
+          </details>
+          <details>
+            <summary>Alcohol Content &#x2295;</summary>
+          </details>
+          <button id="finish" class="close">Finish</button>
+        </div>
+
       </div>
 
-    <hr />
-    <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-					<li><a href="breweries.html">Choose Brewery</a></li>
-          <li><a href="brewery_main.html">Brewery Main Page</a></li>
-					<li><a href="filter.html">Filters</a></li>
-          <li><a href="beer.html">Beer Page</a></li>
-        </ul>
-    </nav>
+      <div id="infoModal" class="beer-info-modal">
+
+      </div>
+
+      <script>
+        var modal = document.getElementById("myModal");
+        var button = document.getElementById("filter");
+
+        var span = document.getElementsByClassName("close")[0];
+
+        button.onclick = function() {
+          modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+
+      </script>
+
+      <!--<script id="beertemplate" type="text/x-handlebars-template">
+        <div class="row" id="beer{{index}}">
+          <figure>
+            <img class="beer" src="{{beerimg}}" alt="Beer">
+            <figcaption>{{beername}}</figcaption>
+          </figure>
+        </div>
+      </script>-->
+
+      <script id="modalTemplate" type="text/x-handlebars-template">
+        <div id="myModal" class="beerModal">
+
+          <!-- Modal content -->
+          <div class="beer-modal-content">
+          </div>
+
+        </div>
+      </script>
+
+      <script src="https://code.jquery.com/jquery.js"></script>
+    	<script src="js/handlebars-v4.0.12.js"></script>
+      <script src="js/beers.js"></script>
   </body>
 </html>
