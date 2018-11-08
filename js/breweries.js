@@ -11,6 +11,8 @@ function initializePage() {
 	    var location = document.getElementById("locations");
 		var loc = "." + location.options[location.selectedIndex].value;
 		$("div.brewery-list").children().show();
-		$("div.brewery-list").children().not(loc).hide();
+		if (loc != ".all") {
+			$("div.brewery-list").children().not(loc).hide();
+		}
 	});
 }

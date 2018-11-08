@@ -3,7 +3,6 @@
   <head>
     <title>Beermenter</title>
     <link rel="icon" href="img/favicon.ico">
-    <base href="https://justinschen.github.io/Beermenter/" />
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/beermenter.css">
     <!--
@@ -16,6 +15,16 @@
     <header>
       <h1>Login page</h1>
     </header>
-    <a href="breweries.html">login</a>
+
+    <form>
+      Username: <input id="username" type="text" name="username">
+      <br>
+      Password: <input id="password" type="password" name="password">
+    </form>
+    <a id="login" href="#">Log In</a>
+    <a id="signup" href="#">Sign Up</a>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>
