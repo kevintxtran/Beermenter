@@ -15,4 +15,15 @@ function initializePage() {
 			$("div.brewery-list").children().not(loc).hide();
 		}
 	});
+
+	$(".open-nav").click(function () {
+		console.log("Hi");
+	    $(".sidenav").css("width", "250px");
+	});
+
+	$(".close-nav").click(function () {
+	    $(".sidenav").css("width", "0");
+
+	});
+
 }
