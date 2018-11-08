@@ -11,17 +11,18 @@
     -->
   </head>
 
-  <body>
-    <header>
-      <h1 class="brewery-title">Login page</h1>
-    </header>
+  <body class="index-body">
+    <h1 class="brewery-title">Beermenter</h1>
+
+    <img src="img/favicon.ico" height="50%" width="50%"/>
 
     <form>
-      Username: <input id="username" type="text" name="username">
+      <input id="username" type="text" name="username" class="textfield" placeholder="Username">
       <br>
-      Password: <input id="password" type="password" name="password">
+      <input id="password" type="password" name="password" class="textfield" placeholder="Password">
     </form>
-    <a id="login" href="#">Log In</a>
+    <div id="login" class="div-btn">Log In</div>
+    <div class="div-btn switch-to-signup">Don't have an account? Sign up</div>
     <a id="signup" href="#">Sign Up</a>
 
     <script src="https://code.jquery.com/jquery.js"></script>

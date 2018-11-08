@@ -254,3 +254,51 @@ div label input {
     font-size: 30px;
     cursor: pointer; 
 }
+
+.textfield {
+    width: 100%;
+    padding: 8px 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #818181;
+    background-color: transparent;
+    color: white;
+    font-size: 17px;
+    font-family: BrixSansLight;
+}
+
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+.index-body {
+  padding: 30px;
+}
+
+.div-btn {
+  cursor: pointer;
+}
+
+#login {
+  background-image: linear-gradient(to right, #FFC900 , #D8844F);
+  text-align: center;
+  padding: 10px;
+  margin: 30px 0px;
+  color: white;
+  font-family: BrixSansMedium;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.switch-to-signup {
+  text-align: center;
+  color: #FFC900;
+  font-family: BrixSansMedium;
+  font-size: 17px;
+}
