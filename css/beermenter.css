@@ -302,3 +302,17 @@ select {
   font-family: BrixSansMedium;
   font-size: 17px;
 }
+
+.index-title {
+  text-align: center;
+  color: #FFC900;
+  font-family: BrixSansBold;
+  font-size: 27px;
+  margin: 16px;
+}
+
+img.logo {
+  margin: 8px auto 8px auto;
+  display: block;
+  width: 50%;
+}
