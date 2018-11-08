@@ -69,6 +69,11 @@ div.brewery img {
 	bottom: 0;
 	right: 0;
 }
+.figcaption {
+  line-height: 2.5ex;
+  height: 7.5ex; /* 2.5ex for each visible line */
+  overflow: hidden;
+}
 .row figure {
 	display: inline-block;
 	max-width: 98%;
@@ -164,7 +169,7 @@ a {
   right: 0;
 }
 details {
-  margin-bottom: 50px;
+  margin-bottom: 90px;
 }
 details summary::-webkit-details-marker {
   display:none;
@@ -172,6 +177,7 @@ details summary::-webkit-details-marker {
 summary {
   font-size: 28px;
   font-family: BrixSansBold;
+  white-space: nowrap;
 }
 #border {
   max-width: 100%;
