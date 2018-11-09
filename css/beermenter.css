@@ -164,7 +164,7 @@ a {
     cursor: pointer;
 }
 #finish{
-  margin-top: 75%;
+  margin-top: 80%;
   margin-right: 0;
   margin-left: 35%;
   background-image: linear-gradient(to right, #FFC900 , #D8844F);
@@ -190,6 +190,7 @@ summary {
   font-size: 28px;
   font-family: BrixSansBold;
   white-space: nowrap;
+  cursor: pointer;
 }
 #border {
   max-width: 100%;
@@ -345,3 +346,4 @@ img.logo {
   display: block;
   width: 50%;
 }
+

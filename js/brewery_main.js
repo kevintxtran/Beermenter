@@ -4,24 +4,24 @@ $(document).ready(function() {
 
 function initializePage() {
 	$('input').click(function() {
-          var category = $(this).val();
+    var category = $(this).val();
 
-          var matchedItems = $('.' + category).each(function () {
-            var anyChecked = false;
-            var classArray = this.className.split(/\s+/);
+    var matchedItems = $('.' + category).each(function () {
+      var anyChecked = false;
+      var classArray = this.className.split(/\s+/);
 
-            for(idx in classArray)
-              {
-              if ($('#filter-' + classArray[idx]).is(":checked"))
-                {
-                  anyChecked = true;
-                  break;
-                }
-              }
-              if (! anyChecked) $(this).hide();
-              else $(this).show();
-          });
+      for(idx in classArray)
+      {
+        if ($('#filter-' + classArray[idx]).is(":checked"))
+        {
+          anyChecked = true;
+          break;
+        }
+      }
+      if (! anyChecked) $(this).hide();
+      else $(this).show();
     });
+  });
 
     /*        var modal = document.getElementById("myModal");
         var button = document.getElementById("filter");
