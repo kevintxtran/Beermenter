@@ -1,6 +1,23 @@
 $(document).ready(function() {
 	initializePage();
+  loadFavorite();
 });
+
+function loadFavorite() {
+  var user = localStorage.getItem("currentUser");
+  var allfavlist = localStorage.getItem("favorite"); //will be JSON later
+  if (allfavlist) {
+      allfavlist = JSON.parse(allfavlist);
+      if (allfavlist[user]) {
+        favlist = allfavlist[user];
+        var i;
+        for (i = 0; i < favlist.length; i++)  {
+          var beer_id = "#infoModal" + favlist[i];
+          $(beer_id + " div .fav-btn").addClass("liked");
+        }
+      }
+  }
+}
 
 function initializePage() {
 	$('input').click(function() {
@@ -21,6 +38,35 @@ function initializePage() {
       if (! anyChecked) $(this).hide();
       else $(this).show();
     });
+  });
+
+  $(".fav-btn").click(function() {
+    var beer_id = $(this).parent().parent().attr('id'); //qm1
+    var beer_num = beer_id[beer_id.length - 1];
+          
+    var user = localStorage.getItem("currentUser");
+    var allfavlist = localStorage.getItem("favorite"); //will be JSON later
+    var favlist = [];
+    if (allfavlist) {
+      allfavlist = JSON.parse(allfavlist);
+      if (allfavlist[user])
+        favlist = allfavlist[user];
+    }   
+    else {
+      allfavlist = {};
+    }
+
+    if ($(this).hasClass("liked")) {
+      $(this).removeClass("liked");
+      favlist.splice(favlist.indexOf(beer_num), 1);
+    }
+    else {
+      $(this).addClass("liked");
+      favlist.push(beer_num);
+    }
+
+    allfavlist[user] = favlist;
+    localStorage.setItem("favorite", JSON.stringify(allfavlist));
   });
 
     /*        var modal = document.getElementById("myModal");

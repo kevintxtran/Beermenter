@@ -44,6 +44,7 @@ function initializePage() {
 				window.alert("Username or password is wrong.");
 			}
 			else {
+				localStorage.setItem("currentUser", username);
 				window.location.href='breweries.html';
 			}
 		}

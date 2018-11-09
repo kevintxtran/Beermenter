@@ -191,6 +191,10 @@ p.info{
   position: absolute; 
   right: 0;
   bottom: 0;
+  cursor: pointer;
+}
+.fav-btn.liked {
+  background-image: url(../img/heart-filled.png);
 }
 
 div.trait label input {
