@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/beermenter.css">
     <link rel="stylesheet" href="css/beerinfo.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
   </head>
 
   <body class="beer-body">
@@ -75,6 +76,15 @@
 
         <p class="btype">Hops & More Hops <sup><img class="qm" id="qm3" src="img/question.png" alt="Information"></sup></p>
 
+        <div class="category">
+          <div class="filterDiv kolsch beer crisp fruity tart test">
+            <figure>
+              <img id="beer9" class="beer" src="img/ballastpoint/other/kolsch-tpk.png" alt="Name of Beer">
+              <figcaption>Tart Peach Kolsch</figcaption>
+            </figure>
+          </div>
+        </div>
+
       <img id="filter" src="img/filtershadow.png" alt="Filters">
 
       <!-- The Modal -->
@@ -87,23 +97,58 @@
             <div id="filterContainer">
               <div class="ck-button">
                 <label>
-                  <input class="btn" type="checkbox" value="1" onclick="filterSelection('kolsch')"><span>Kolsch</span>
+                  <input class="btn" type="checkbox" value="kolsch" id="filter-kolsch"><span>Kolsch</span>
                 </label>
               </div>
               <div class="ck-button">
                 <label>
-                  <input class="btn" type="checkbox" value="1" onclick="filterSelection('lager')"><span>Lager</span>
+                  <input class="btn" type="checkbox" value="lager" id="filter-lager"><span>Lager</span>
                 </label>
               </div>
               <div class="ck-button">
                 <label>
-                  <input class="btn" type="checkbox" value="1" onclick="filterSelection('ipa')"><span>India Pale Ale</span>
+                  <input class="btn" type="checkbox" value="ipa" id="filter-ipa"><span>India Pale Ale</span>
                 </label>
               </div>
             </div>
           </details>
           <details>
             <summary>Characteristic &#x2295;</summary>
+            <div class="ck-button">
+              <label>
+                <input class="btn" type="checkbox" value="ipa" id="filter-crisp"><span>Crisp</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input class="btn" type="checkbox" value="ipa" id="filter-fruity"><span>Fruity</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input class="btn" type="checkbox" value="ipa" id="filter-hop"><span>Hop</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input class="btn" type="checkbox" value="ipa" id="filter-malt"><span>Malt</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input class="btn" type="checkbox" value="ipa" id="filter-roasted"><span>Roasted</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input class="btn" type="checkbox" value="ipa" id="filter-smoky"><span>Smoky</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input class="btn" type="checkbox" value="ipa" id="filter-tart"><span>Tart</span>
+              </label>
+            </div>
           </details>
           <details>
             <summary>Alcohol Content &#x2295;</summary>
@@ -278,6 +323,31 @@
           </div>
         </div>
       </div>
+      <div id="infoModal9" class="beer-info-modal">
+        <div class="beer-modal-content">
+          <span class="close">&times;</span>
+          <img class="beerinfo" src="img/ballastpoint/other/kolsch-tpk.png" alt="Name of Beer">
+          <p class="beername">Tart Peach Kolsch</p>
+          <p class="beertype">Kolsch</p>
+          <p class="abv">5.2% Alcohol Content</p>
+          <p class="beerdesc">Hints of ripe peach with a refreshing tart finish</p>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Crisp</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Fruity</span>
+            </label>
+          </div>
+          <div class="trait">
+            <label>
+              <input type="checkbox" value="1"><span>Tart</span>
+            </label>
+          </div>
+        </div>
+      </div>
 
       <div id="qModal1" class="qmodal">
         <div class="qcontent">
@@ -299,48 +369,25 @@
       </div>
 
       <script>
-      filterSelection("all")
-      function filterSelection(c) {
-        var x, i;
-        x = document.getElementsByClassName("filterDiv");
-        if (c == "all") c = "";
-        for (i = 0; i < x.length; i++) {
-          w3RemoveClass(x[i], "show");
-          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-        }
-      }
+        $('input').click(function() {
+          var category = $(this).val();
 
-      function w3AddClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-          if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-        }
-      }
+          var matchedItems = $('.' + category).each(function () {
+            var anyChecked = false;
+            var classArray = this.className.split(/\s+/);
 
-      function w3RemoveClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-          while (arr1.indexOf(arr2[i]) > -1) {
-            arr1.splice(arr1.indexOf(arr2[i]), 1);
-          }
-        }
-        element.className = arr1.join(" ");
-      }
-
-      // Add active class to the current button (highlight it)
-      var btnContainer = document.getElementById("filterContainer");
-      var btns = btnContainer.getElementsByClassName("btn");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function(){
-          var current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
-          this.className += " active";
+            for(idx in classArray)
+              {
+              if ($('#filter-' + classArray[idx]).is(":checked"))
+                {
+                  anyChecked = true;
+                  break;
+                }
+              }
+              if (! anyChecked) $(this).hide();
+              else $(this).show();
+          });
         });
-      }
       </script>
 
       <script>
@@ -455,10 +502,17 @@
         span8.onclick = function() {
           bmodal8.style.display = "none";
         }
+        var bmodal9 = document.getElementById("infoModal9");
+        var bimage9 = document.getElementById("beer9");
+        var span9 = document.getElementsByClassName("close")[9];
+        bimage9.onclick = function() {
+          bmodal9.style.display = "block";
+        }
+        span9.onclick = function() {
+          bmodal9.style.display = "none";
+        }
       </script>
 
       <script src="https://code.jquery.com/jquery.js"></script>
-    	<script src="js/handlebars-v4.0.12.js"></script>
-      <script src="js/beers.js"></script>
   </body>
 </html>
