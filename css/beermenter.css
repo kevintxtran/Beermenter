@@ -105,7 +105,9 @@ a {
 }
 .brewery-title {
 	color: white;
-	font-size: 18pt;
+	font-size: 28px;
+  font-family: BrixSansBold;
+  font-weight: normal;
 }
 .modal {
     display: none;
@@ -254,35 +256,47 @@ div label input {
 }
 
 .textfield {
-    width: 100%;
-    padding: 8px 8px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid #818181;
-    background-color: transparent;
-    color: white;
-    font-size: 17px;
-    font-family: BrixSansLight;
+  width: 100%;
+  padding: 8px 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #818181;
+  background-color: transparent;
+  color: white;
+  font-size: 17px;
+  font-family: BrixSansLight;
 }
 
 select {
   width: 100%;
-  padding: 16px 20px;
+  padding: 8px 8px;
   border: none;
-  border-radius: 4px;
-  background-color: #f1f1f1;
+  border-bottom: 1px solid white;
+  //border-radius: 4px;
+  background-color: transparent;//#f1f1f1;
+  color: white;
+  font-size: 17px;
+}
+
+select option {
+  color: #252735;
+  font-weight: bold;
 }
 
 .index-body {
-  padding: 30px;
+  padding: 36px;
+}
+
+.brewery-body {
+  padding: 8px;
 }
 
 .div-btn {
   cursor: pointer;
 }
 
-#login {
+#login-signup-btn {
   background-image: linear-gradient(to right, #FFC900 , #D8844F);
   text-align: center;
   padding: 10px;
@@ -290,15 +304,16 @@ select {
   color: white;
   font-family: BrixSansMedium;
   font-size: 17px;
-  font-weight: bold;
+  font-weight: normal;
   border-radius: 4px;
 }
 
-.switch-to-signup {
+.switch-mode {
   text-align: center;
   color: #FFC900;
   font-family: BrixSansMedium;
   font-size: 17px;
+  display: inline-block;
 }
 
 .index-title {
