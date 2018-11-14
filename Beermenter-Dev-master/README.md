@@ -1,2 +1,0 @@
-# Beermenter
-Ale Inc.
